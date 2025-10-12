@@ -1,10 +1,18 @@
 package tests;
 
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static tests.TestData.ISSUES_TAB_TEXT;
 import static tests.TestData.REPO_LINK;
 
 public class AnnotatedStepTest extends TestBase{
+    @Feature("Таб Issue в репозитории")
+    @Story("Перейти в Issues репозитория")
+    @Owner("julianaastra")
+    @Severity(SeverityLevel.BLOCKER)
+    @Link(value = "Testing", url = "https://github.com/")
+    @DisplayName("Проверка таба Issues в репозитории")
     @Test
     public void annotatedStepTest() {
         RepositorySteps steps = new RepositorySteps();
