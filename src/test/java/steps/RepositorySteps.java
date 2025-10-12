@@ -28,13 +28,11 @@ public class RepositorySteps {
         searchBtn
                 .shouldBe(visible)
                 .click();
-        takeScreenshot();
     }
 
     @Step("Найти репозиторий {repo}")
     public void findRepository(String repo) {
         searchInput.sendKeys(repo);
-        takeScreenshot();
         searchInput.submit();
     }
 

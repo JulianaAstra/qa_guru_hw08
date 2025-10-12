@@ -15,6 +15,6 @@ public class TestBase {
 
     @BeforeEach
     void setAllureConfig() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true) );
     }
 }

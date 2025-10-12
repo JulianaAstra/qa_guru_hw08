@@ -9,6 +9,8 @@ import static tests.TestData.ISSUES_TAB_TEXT;
 import static tests.TestData.REPO_LINK;
 
 public class AnnotatedStepTest extends TestBase{
+    RepositorySteps steps = new RepositorySteps();
+
     @Feature("Таб Issue в репозитории")
     @Story("Перейти в Issues репозитория")
     @Owner("julianaastra")
@@ -17,10 +19,9 @@ public class AnnotatedStepTest extends TestBase{
     @DisplayName("Проверка таба Issues в репозитории")
     @Test
     public void annotatedStepTest() {
-        RepositorySteps steps = new RepositorySteps();
-
         steps.openMainPage();
         steps.searchButtonClick();
+        steps.takeScreenshot();
         steps.findRepository(REPO_LINK);
         steps.checkoutRepository(REPO_LINK);
         steps.checkTabExist(ISSUES_TAB_TEXT);
