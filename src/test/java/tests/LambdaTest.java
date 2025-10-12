@@ -2,12 +2,11 @@ package tests;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
-
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.attachment;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 import static tests.TestData.ISSUES_TAB_TEXT;
@@ -44,6 +43,7 @@ public class LambdaTest extends TestBase {
 
         step("Таб " + ISSUES_TAB_TEXT + " отображается", () -> {
             $(withText(ISSUES_TAB_TEXT)).should(exist);
+            attachment("Source", webdriver().driver().source());
         });
     }
 }
