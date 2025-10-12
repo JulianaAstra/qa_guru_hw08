@@ -1,4 +1,4 @@
-package tests;
+package steps;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
@@ -19,12 +19,12 @@ public class RepositorySteps {
     final SelenideElement searchInput = $("#query-builder-test");
 
     @Step("Открыть главную страницу")
-    void openMainPage() {
+    public void openMainPage() {
         open("");
     }
 
     @Step("Раскрыть поисковую строку")
-    void searchButtonClick() {
+    public void searchButtonClick() {
         searchBtn
                 .shouldBe(visible)
                 .click();
@@ -32,21 +32,21 @@ public class RepositorySteps {
     }
 
     @Step("Найти репозиторий {repo}")
-    void findRepository(String repo) {
+    public void findRepository(String repo) {
         searchInput.sendKeys(repo);
         takeScreenshot();
         searchInput.submit();
     }
 
     @Step("Перейти в репозиторий {repo}")
-    void checkoutRepository(String repo) {
+    public void checkoutRepository(String repo) {
         $(linkText(repo))
                 .should(exist)
                 .click();
     }
 
     @Step("Таб {tab} отображается")
-    void checkTabExist(String tab) {
+    public void checkTabExist(String tab) {
         $(withText(tab)).should(exist);
     }
 

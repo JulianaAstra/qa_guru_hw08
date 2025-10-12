@@ -3,6 +3,8 @@ package tests;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import steps.RepositorySteps;
+
 import static tests.TestData.ISSUES_TAB_TEXT;
 import static tests.TestData.REPO_LINK;
 
