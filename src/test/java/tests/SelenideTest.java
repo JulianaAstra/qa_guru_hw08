@@ -1,6 +1,8 @@
 package tests;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.withText;
@@ -10,6 +12,8 @@ import static org.openqa.selenium.By.linkText;
 public class SelenideTest extends TestBase {
     @Test
     public void checkIssueSelenideTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         final String REPO_LINK = "JulianaAstra/qa_guru_hw08";
         final String ISSUES_TAB_TEXT = "Issues";
         final SelenideElement searchBtn = $(".header-search-button");
