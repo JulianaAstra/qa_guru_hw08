@@ -21,7 +21,6 @@ public class AnnotatedStepTest extends TestBase{
     public void annotatedStepTest() {
         steps.openMainPage();
         steps.searchButtonClick();
-        steps.takeScreenshot();
         steps.findRepository(REPO_LINK);
         steps.checkoutRepository(REPO_LINK);
         steps.checkTabExist(ISSUES_TAB_TEXT);
