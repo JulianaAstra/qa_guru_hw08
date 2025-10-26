@@ -10,12 +10,12 @@ import static tests.TestData.ISSUES_TAB_TEXT;
 import static tests.TestData.REPO_LINK;
 
 public class SelenideTest extends TestBase {
+    final SelenideElement searchBtn = $(".header-search-button");
+    final SelenideElement searchInput = $("#query-builder-test");
+    final SelenideElement repoLink = $(linkText(REPO_LINK));
+
     @Test
     public void checkIssueSelenideTest() {
-        final SelenideElement searchBtn = $(".header-search-button");
-        final SelenideElement searchInput = $("#query-builder-test");
-        final SelenideElement repoLink = $(linkText(REPO_LINK));
-
         open("");
         searchBtn
                 .shouldBe(visible)
